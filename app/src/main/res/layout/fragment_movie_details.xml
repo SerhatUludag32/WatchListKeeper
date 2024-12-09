@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/directorNameText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="60dp"
+        android:ems="10"
+        android:hint="Enter Director Name"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/ReleaseYearText"
+        app:layout_constraintEnd_toEndOf="@+id/ReleaseYearText"
+        app:layout_constraintStart_toStartOf="@+id/ReleaseYearText"
+        app:layout_constraintTop_toBottomOf="@+id/movieNameText" />
+
+    <EditText
+        android:id="@+id/movieNameText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="61dp"
+        android:ems="10"
+        android:hint="Enter Movie Name"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/directorNameText"
+        app:layout_constraintEnd_toEndOf="@+id/directorNameText"
+        app:layout_constraintStart_toStartOf="@+id/directorNameText"
+        app:layout_constraintTop_toBottomOf="@+id/movieImageView" />
+
+    <ImageView
+        android:id="@+id/movieImageView"
+        android:layout_width="281dp"
+        android:layout_height="177dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="65dp"
+        app:layout_constraintBottom_toTopOf="@+id/movieNameText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <EditText
+        android:id="@+id/ReleaseYearText"
+        android:layout_width="252dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="56dp"
+        android:ems="10"
+        android:hint="Enter Director Name"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/saveButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/directorNameText" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:text="SAVE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ReleaseYearText" />
+</androidx.constraintlayout.widget.ConstraintLayout>

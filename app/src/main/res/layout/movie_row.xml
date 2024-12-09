@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp">
+    
+    <ImageView
+        android:id="@+id/movieRowImageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/ic_launcher_background"
+        android:scaleType="centerCrop">
+    </ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        
+        <TextView
+            android:id="@+id/movieRowNameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Movie Name"
+            android:textSize="28sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/movieRowDirectorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Director Name"
+            android:textSize="24sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            >
+        </TextView>
+
+        <TextView
+            android:id="@+id/movieRowYearText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Release Year"
+            android:textSize="20sp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            >
+        </TextView>
+        
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
