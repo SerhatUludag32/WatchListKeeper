@@ -54,7 +54,7 @@ class MovieViewModel @Inject constructor(private val repository: MovieRepository
     }
 
     fun makeMovie(name : String, directorName : String, releaseYear : String){
-        if (name.isEmpty() || directorName.isEmpty() || releaseYear.isEmpty()){
+        if (name.isBlank() || directorName.isBlank() || releaseYear.isBlank()){
             insertMovieMsg.postValue(Resource.error("Enter name, director, year",null))
             return
         }

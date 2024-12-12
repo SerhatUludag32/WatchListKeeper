@@ -19,7 +19,9 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        //testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        // When we use our custom test we should change the testInstrumentationRunner
+        testInstrumentationRunner = "com.serhatuludag.watchlistkeeper.roomdb.HiltTestRunner"
 
         ksp {
             arg("room.schemaLocation", "$projectDir/schemas")

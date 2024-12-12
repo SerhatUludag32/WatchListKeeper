@@ -21,7 +21,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class ImageApiFragment @Inject constructor(private val imageRecyclerAdapter: ImageRecyclerAdapter) : Fragment(R.layout.fragment_image_api) {
+class ImageApiFragment @Inject constructor(val imageRecyclerAdapter: ImageRecyclerAdapter) : Fragment(R.layout.fragment_image_api) {
 
     private var fragmentBinding: FragmentImageApiBinding? = null
     private val viewModel: MovieViewModel by activityViewModels()
@@ -48,13 +48,11 @@ class ImageApiFragment @Inject constructor(private val imageRecyclerAdapter: Ima
 
         subscribeToObservers()
 
-        //viewModel = ViewModelProvider(requireActivity())[MovieViewModel::class.java]
 
         binding.imageRecyclerView.adapter = imageRecyclerAdapter
         binding.imageRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
         imageRecyclerAdapter.setOnItemClickListener {
-            println("Selected image URL: $it") // Debugging line
             findNavController().popBackStack()
             viewModel.setSelectedImage(it)
         }

@@ -19,13 +19,13 @@ import javax.inject.Inject
 class MovieDetailsFragment @Inject constructor(val glide : RequestManager): Fragment(R.layout.fragment_movie_details) {
 
     private var fragmentBinding: FragmentMovieDetailsBinding? = null
-    private val viewModel: MovieViewModel by activityViewModels()
+    val viewModel: MovieViewModel by activityViewModels()
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //viewModel = ViewModelProvider(requireActivity())[MovieViewModel::class.java]
 
         val binding = FragmentMovieDetailsBinding.bind(view)
         fragmentBinding = binding
@@ -38,7 +38,6 @@ class MovieDetailsFragment @Inject constructor(val glide : RequestManager): Frag
             )
         }
 
-        //println(viewModel.selectedImageUrl.value)
 
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -60,9 +59,7 @@ class MovieDetailsFragment @Inject constructor(val glide : RequestManager): Frag
     }
 
     private fun subscribeToObservers() {
-        println("subscribeToObservers called")
         viewModel.selectedImageUrl.observe(viewLifecycleOwner) { url ->
-            println(url) // Debugging line
             fragmentBinding?.let { binding ->
                 glide.load(url).into(binding.movieImageView)
             }

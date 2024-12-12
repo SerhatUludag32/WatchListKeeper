@@ -40,8 +40,6 @@ class MovieFragment @Inject constructor(val movieRecyclerAdapter: MovieRecyclerA
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //viewModel = ViewModelProvider(requireActivity()).get(MovieViewModel::class.java)
-
         val binding = FragmentMovieBinding.bind(view)
         fragmentBinding = binding
 
