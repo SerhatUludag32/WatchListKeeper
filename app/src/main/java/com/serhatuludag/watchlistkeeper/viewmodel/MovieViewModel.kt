@@ -17,7 +17,7 @@ class MovieViewModel @Inject constructor(private val repository: MovieRepository
 
     // Movie Fragment
 
-    val artists = repository.getMovie()
+    val movieList = repository.getMovie()
 
     // ImageApi Fragment
 

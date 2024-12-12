@@ -5,7 +5,7 @@ plugins {
     id ("kotlin-android")
     id("com.google.dagger.hilt.android")
     id ("androidx.navigation.safeargs.kotlin")
-    id ("com.google.devtools.ksp")
+    id ("com.google.devtools.ksp") version "2.0.10-1.0.24"
 }
 
 android {
@@ -57,6 +57,14 @@ android {
 
 dependencies {
 
+
+
+    implementation ("androidx.hilt:hilt-navigation-compose:1.1.0")
+
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    ksp("com.google.dagger:hilt-compiler:2.51.1")
+
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -66,9 +74,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation(libs.hilt.android.v248)
-    ksp(libs.hilt.compiler)
-//implementation("androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03")
     ksp(libs.androidx.hilt.compiler)
 
     implementation(libs.kotlinx.coroutines.core)
