@@ -18,5 +18,6 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         supportFragmentManager.fragmentFactory = fragmentFactory
         setContentView(R.layout.activity_main)
+
     }
 }

@@ -10,14 +10,13 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.RequestManager
 import com.serhatuludag.watchlistkeeper.R
-import com.serhatuludag.watchlistkeeper.model.Movie
 import javax.inject.Inject
 
 class ImageRecyclerAdapter @Inject constructor(val glide: RequestManager) : RecyclerView.Adapter<ImageRecyclerAdapter.ImageViewHolder>() {
 
-    class ImageViewHolder(itemView: View) : ViewHolder(itemView)
-
     private var onItemClickListener : ((String) -> Unit) ?= null
+
+    class ImageViewHolder(itemView: View) : ViewHolder(itemView)
 
     private val diffUtil = object : DiffUtil.ItemCallback<String>(){
 
@@ -57,7 +56,7 @@ class ImageRecyclerAdapter @Inject constructor(val glide: RequestManager) : Recy
         val url = images[position]
         holder.itemView.apply {
             glide.load(url).into(imageView)
-            setOnItemClickListener {
+            setOnClickListener {
                 onItemClickListener?.let {
                     it(url)
                 }

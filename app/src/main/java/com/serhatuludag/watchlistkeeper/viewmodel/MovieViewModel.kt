@@ -25,10 +25,13 @@ class MovieViewModel @Inject constructor(private val repository: MovieRepository
     val imageList : LiveData<Resource<ImageResponse>>
         get() = images
 
-    private val selectedImage = MutableLiveData<String>()
+    private val _selectedImage = MutableLiveData<String>()
     val selectedImageUrl : LiveData<String>
-        get() = selectedImage
+        get() = _selectedImage
 
+    fun setSelectedImage(url : String) {
+       _selectedImage.value = url
+    }
     // Movie Details Fragment
 
     private var insertMovieMsg = MutableLiveData<Resource<Movie>>()
@@ -41,9 +44,6 @@ class MovieViewModel @Inject constructor(private val repository: MovieRepository
     }
 
 
-    fun setSelectedImage(url : String) {
-        selectedImage.postValue(url)
-    }
 
     fun deleteMovie(movie: Movie) = viewModelScope.launch {
         repository.deleteMovie(movie)
@@ -64,7 +64,7 @@ class MovieViewModel @Inject constructor(private val repository: MovieRepository
             insertMovieMsg.postValue(Resource.error("Year should be number",null))
             return
         }
-        val movie = Movie(name,directorName,yearInt,selectedImage.value ?: "")
+        val movie = Movie(name,directorName,yearInt,_selectedImage.value ?: "")
         insertMovie(movie)
         setSelectedImage("")
         insertMovieMsg.postValue(Resource.success(movie))
